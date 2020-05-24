@@ -186,3 +186,35 @@ for(var member in personObject){
     console.log("the member " + member + " of personObject is " + personObject[member])
   }
 }
+
+/*Functions*/
+// Defining a named function
+function greet(name){
+	return "Hello " + name + "!";
+}
+console.log(greet("Eric"));	//prints out Hello Eric!
+// Defining an anonymous function
+var greet = function(name){
+	return "Hello " + name + "!";
+}
+console.log(greet("Eric"));	// prints out Hello Eric!
+
+/*Pop-up Boxes*/
+confirm("Hi");	// Will return "true" if ok is selected, and return "false" if cancel is selected.
+prompt("Bye");	// Will return whatever is in the text box.
+alert("Hello"); // Will not return anything.
+
+/*Callbacks*/
+// Call backs in javascript are functions that are passed as arguments to other functions. 
+// This is a very important feature of asynchronous programming, and it enables the function that recieves
+// the callbakc to call our code when it finishes a long task, while allowing us to continue the execution of the code.
+var callback = function(){
+	console.log("Done!");
+}
+setTimeout(callback, 5000); // waits for 5 sec and prints out Done! when the 5 sec are up.
+
+setTimeout(function(){
+	console.log("Done!");
+}, 5000); // Like regular functions, callbacks can receive arguments and be executed more than once.
+
+/*Advanced tutorials*/
