@@ -260,3 +260,12 @@ boundPrintName();	// prints out "John"
 //Calling a function with a different context
 printName.call(person);	// prints out "John"
 
+// call/apply vs bind
+// Note: bind returns a new function identical to the old function...
+var boundPrintName = printName.call(person);	//boundPrintName gets printName's return value (null)
+boundPrintName();	// doesn't work because it's not a function, it's null
+printName.bind(person);	//returns a new function, but nothing is using it so it's useless
+printName();	// throws error because this.name is not defined...
+
+/*Inheritance*/
+
