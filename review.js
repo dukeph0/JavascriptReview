@@ -219,3 +219,44 @@ setTimeout(function(){
 }, 5000); // Like regular functions, callbacks can receive arguments and be executed more than once.
 
 /*Something Advance*/
+/*Object Oriented Javascript*/
+// Note: Javascript uses functions as classes to create objects using the "new" keyword.
+function Person(firstName, lastName){
+	//construct the object using the arguments 
+	this.firstName = firstName;
+	this.lastName = lastName;
+
+	// a method which returns the full name
+	this.fullName = function(){
+		return this.firstName + " " + this.lastName;
+	}
+}
+var myPerson = new Person("John", "Smith");
+console.log(myPerson.fullName());	//outputs "John Smith"
+
+// Note: Similarly, creating an object using the "new" keyword is the same as:
+var myPerson = {
+	firstName : "John", 
+	lastName : "Smith", 
+	fullName : function(){
+		return this.firstName + " " + this.lastName;
+	}
+}
+
+/*Function Context*/
+// Note: Functions in Javascript run in a specific context, and using the "this" variable we have access to it.
+// Binding a method function to an object
+var person = {
+	name : "John"
+};
+
+function printName(){
+	console.log(this.name);
+}
+
+varboundPrintName = printName.bind(person);
+boundPrintName();	// prints out "John"
+
+//Calling a function with a different context
+printName.call(person);	// prints out "John"
+
