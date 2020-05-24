@@ -1,3 +1,4 @@
+/*The Basics*/
 /*Simple Hello World*/
 console.log("Hello, World!");
 
@@ -217,4 +218,4 @@ setTimeout(function(){
 	console.log("Done!");
 }, 5000); // Like regular functions, callbacks can receive arguments and be executed more than once.
 
-/*Advanced tutorials*/
+/*Something Advance*/
